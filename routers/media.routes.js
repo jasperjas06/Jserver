@@ -27,7 +27,8 @@ const uploadVideo = (req, res) => {
             return res.status(500).send(err);
         }
         var multer = new Media({
-            title: req.file.originalname,
+            // title: req.file.originalname,
+            title:req.body.title,
             url: result.url,
             cloudinary_id: result.public_id,
             description: req.body.description,
